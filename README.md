@@ -5,6 +5,8 @@
 //------------------------------------------------------------------//
 //                          INSTALL APACHE                          //
 //------------------------------------------------------------------//
+
+```php
 sudo apt update
 sudo apt install apache2
 sudo ufw app list
@@ -15,12 +17,13 @@ sudo systemctl start apache2
 sudo systemctl enable apache2
 sudo systemctl stop apache2
 sudo systemctl restart apache2
-
+```
 
 //------------------------------------------------------------------//
 //                             INSTALL PHP                          //
 //------------------------------------------------------------------//
 
+```php
 sudo apt-get update
 sudo apt install php libapache2-mod-php php-mysql  //Install Default PHP
 
@@ -35,10 +38,12 @@ sudo apt-get update
 sudo apt -y install php7.4
 sudo apt-get install -y php7.4-cli php7.4-json php7.4-common php7.4-mysql php7.4-zip php7.4-gd php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath
 
-
+```
 //------------------------------------------------------------------//
 //                         INSTALL MARIADB                          //
 //------------------------------------------------------------------//
+
+```php
 sudo apt update
 sudo apt install mariadb-server
 sudo systemctl start mariadb.service
@@ -56,12 +61,13 @@ SET All Access , Not Nessesary
 
 	GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
 	GRANT ALL ON laravel_db.* TO 'laravel_user'@'localhost';
-
+```
 
 //------------------------------------------------------------------//
 //                      INSTALL PHPMYADMIN                          //
 //------------------------------------------------------------------//
 
+```php
 sudo apt install phpmyadmin
 
 sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
@@ -85,25 +91,27 @@ and restart Apache:
 
 /etc/init.d/apache2 restart
 
-
+```
 
 //------------------------------------------------------------------//
 //     						Install Composer    		            //
 //------------------------------------------------------------------//
 
 
+```php
 curl -sS https://getcomposer.org/installer | php
 
 sudo mv composer.phar /usr/local/bin/composer
 
 sudo chmod +x /usr/local/bin/composer
 
-
+```
 //------------------------------------------------------------------//
 //     			Configure Apache to serve Laravel 		            //
 //------------------------------------------------------------------//
 
 
+```php
 
 To host a Laravel site, it is necessary to configure the Apache web server, and for this purpose, you must launch the virtual host file:
 
@@ -135,10 +143,12 @@ sudo a2enmod php8.3
 sudo a2dismod php7.x
 sudo service apache2 restart
 
-
+```
 
 //-------------------------------------------//
       Defolt out run 
 //-------------------------------------------//
-      
+
+```php      
   /usr/bin/php8.3 artisan serve
+```
